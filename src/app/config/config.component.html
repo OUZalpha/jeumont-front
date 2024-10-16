@@ -1,6 +1,7 @@
 <div class="container-page">
     <div class="rounded-[1rem]">
-        <div class=" grid grid-cols-9 border border-solid border-black text-center rounded-t-[10px]">
+        <!-- Adjust the grid layout for mobile and desktop -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-9 border border-solid border-black text-center rounded-t-[10px]">
             <ng-container *ngFor="let route of configRoutes">
                 <a
                     (click)="changeUrl()"
@@ -12,7 +13,9 @@
                 </a>
             </ng-container>
         </div>
-        <div class="bg-[#EEE] rounded-b-[1rem] p-[1rem] overflow-y-hidded">
+
+        <!-- Ensure the content below adjusts for mobile screens with padding and hidden overflow adjustments -->
+        <div class="bg-[#EEE] rounded-b-[1rem] p-[1rem] overflow-y-hidden sm:p-[1.5rem] lg:p-[2rem]">
             <router-outlet></router-outlet>
         </div>
     </div>

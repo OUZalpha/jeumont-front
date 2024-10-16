@@ -23,9 +23,6 @@
                     <div class="flex flex-col justify-center items-center mb-2">
                         <label class="config-title-ticket">Piece</label>
                         <select formControlName="piece_uuid_piece" class="w-[15rem] p-1 font-normal border border-solid border-[#E30039]">
-                            <!--
-                                <option value="">None</option>
-                            -->
                             <option *ngFor="let piece of pieces" [value]="piece.piece_uuid">{{ piece.piece_label }}</option>
                         </select>
                     </div>
@@ -55,9 +52,6 @@
         <form [formGroup]="formCheck" class="p-4 rounded-b-[10px] flex flex-col items-center justify-between h-[80%]">
             <div class="flex flex-col justify-center items-center">
                 <select [(ngModel)]="selectedPiece" [ngModelOptions]="{standalone: true}" (change)="updateFormValues()" class="p-1 font-normal border border-solid border-[#E30039] w-[400px]">
-                    <!--
-                        <option [ngValue]="null">None</option>
-                    -->
                     <option *ngFor="let piece of pieces" [ngValue]="piece">{{ piece.piece_label }}</option>
                 </select>                
             </div>
