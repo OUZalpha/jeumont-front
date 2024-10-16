@@ -1,0 +1,141 @@
+/* Styles de base */
+.container-page {
+    padding: 1rem;
+}
+
+/* Statistiques en grille pour les écrans de PC */
+.statistique-item {
+    background-color: #f8f8f8;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.statistique-main-filter-item {
+    margin-bottom: 1rem;
+}
+
+/* Responsive pour les écrans de téléphone et de PC */
+@media (min-width: 768px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Grille 4 colonnes pour PC */
+        gap: 1rem;
+    }
+
+    .statistique-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .statistique-main-filter {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .statistique-main-filter-item {
+        flex: 1;
+        max-width: 20%; /* Ajuste la largeur des filtres */
+    }
+
+    .statistique-main-info {
+        margin-top: 2rem;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Responsive pour les téléphones */
+@media (max-width: 767px) {
+    /* Grille 1 colonne pour les téléphones */
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Une seule colonne */
+        gap: 1rem;
+    }
+
+    .statistique-item {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Affichage en bloc pour les filtres sur mobile */
+    .statistique-main-filter {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .statistique-main-filter-item {
+        margin-bottom: 1rem;
+        width: 100%; /* Chaque filtre prend toute la largeur */
+    }
+
+    /* Style de la section des statistiques */
+    .statistique-main-info {
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    .statistique-main h2 {
+        font-size: 1rem;
+    }
+
+    /* Ajustements pour le graphique */
+    #chart {
+        padding: 0.5rem;
+    }
+
+    .page-title {
+        font-size: 0.9rem; /* Réduire la taille des titres sur mobile */
+    }
+
+    h1, h2, h6 {
+        font-size: 0.9rem; /* Ajustement général des polices */
+    }
+}
+
+/* Global styles */
+.dashboard-menu-item-1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+/* Alignment settings */
+.alignements {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-menu-item-select {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Styles for statistic titles */
+.statistique-item-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Buttons and inputs */
+button, input, select {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+/* Ensuring charts are responsive */
+#chart {
+    max-width: 100%;
+    height: auto;
+}
+
+.bg-custom {
+    background-color: #f28a8a; /* Adjust this as per your design */
+}

@@ -1,0 +1,179 @@
+/* Styles de base des tickets */
+.ticket, .ticket-dev {
+    display: flex;
+    flex-direction: row; /* Tickets organisés en rangée sur grand écran */
+    align-items: center;
+    padding: .5rem;
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+    border: 1px solid #000;
+    width: 100%;
+    background-color: #f8f8f8; /* Fond léger */
+}
+
+/* Assurez-vous que les éléments à gauche et à droite prennent une bonne place */
+.ticket-left {
+    width: 60%; /* Ajustez à 60% pour la partie gauche */
+}
+
+.ticket-right {
+    width: 35%; /* Ajustez à 35% pour la partie droite */
+}
+
+/* Flexbox pour centrer verticalement les contenus des tickets */
+.ticket-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.ticket-title {
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.ticket-description, .ticket-descriptions {
+    display: flex;
+    justify-content: space-between;
+    background: #E4E4E4;
+    padding: .5rem;
+    border-radius: .5rem;
+    font-size: .85rem;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+/* Colonne entre */
+.ticket-col-between {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+}
+
+/* Boutons pour les tickets */
+.ticket-button {
+    font-size: .85rem;
+    font-weight: bold;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Pour garder l'icône de fermeture visible */
+.ticket-close-icon {
+    width: 1.8rem;
+    height: 1.5rem;
+}
+
+/* Scrollbars customisés */
+.custom-scrollbar {
+    overflow: auto;
+}
+
+.overflow-x-auto {
+    overflow-x: auto;
+}
+
+.overflow-y-auto {
+    overflow-y: auto;
+}
+
+/* --- RESPONSIVE STYLES --- */
+
+/* Pour les écrans larges (PC) */
+@media (min-width: 768px) {
+    .ticket {
+        flex-direction: row;
+    }
+
+    .ticket-left {
+        width: 60%;
+    }
+
+    .ticket-right {
+        width: 35%;
+    }
+
+    .ticket-description, .ticket-descriptions {
+        width: 100%;
+    }
+
+    .ticket-close-icon {
+        width: 1.8rem;
+        height: 1.5rem;
+    }
+}
+
+/* Pour les écrans de téléphone (mobile) */
+@media (max-width: 767px) {
+    .ticket, .ticket-dev {
+        flex-direction: column; /* Les tickets se réorganisent en colonne sur mobile */
+        align-items: flex-start; /* Alignement des éléments à gauche */
+        //padding: 1rem; /* Ajout d'un padding pour plus d'espacement */
+    }
+
+    .ticket-left, .ticket-right {
+        width: 100%; /* Chaque section occupe toute la largeur sur mobile */
+        margin-bottom: 1rem; /* Ajout d'espacement entre les sections */
+    }
+
+    .ticket-title {
+        font-size: 1rem; /* Ajustement des tailles de police pour plus de lisibilité */
+        font-weight: bold; /* Mettre le titre en gras pour une meilleure visibilité */
+    }
+
+    .ticket-description, .ticket-descriptions {
+        width: 100%; /* Prend toute la largeur sur mobile */
+        height: auto; /* Ajustement automatique de la hauteur */
+        font-size: 0.9rem; /* Ajustement de la taille de police pour mobile */
+    }
+
+    .ticket-button {
+        font-size: 0.9rem; /* Ajustement de la taille des boutons */
+        padding: 0.5rem 1rem; /* Ajout de plus de padding pour rendre les boutons plus grands */
+    }
+
+    .ticket-close-icon {
+        width: 1.5rem; /* Ajustement de la taille de l'icône de fermeture */
+        height: 1.5rem;
+    }
+
+    /* Cache la description sur mobile */
+    .ticket-col-between2 {
+        display: none; /* Cache cet élément sur les petits écrans */
+    }
+
+    /* Assurez-vous que le contenu client et navire est bien placé à droite */
+    .ticket-flex-start {
+        flex-direction: row; /* Aligne en ligne les éléments (utilisateur et navire) */
+        justify-content: flex-start; /* Aligne les éléments à gauche */
+        //gap: 1rem; /* Ajoute de l'espacement entre les éléments */
+    }
+}
+
+
+/* Pour les très petits écrans (moins de 480px) */
+@media (max-width: 480px) {
+    .ticket-title {
+        font-size: 0.8rem;
+    }
+
+    .ticket-description, .ticket-descriptions {
+        font-size: 0.75rem;
+    }
+
+    .ticket-button {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.6rem; /* Réduction supplémentaire des boutons */
+    }
+
+    .ticket-close-icon {
+        width: 1rem;
+        height: 1rem;
+    }
+}

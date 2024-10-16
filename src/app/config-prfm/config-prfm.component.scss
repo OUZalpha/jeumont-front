@@ -1,0 +1,170 @@
+/* General Styles */
+input {
+    outline: none; /* Remove the default focus outline */
+}
+
+.selected {
+    background-color: #E30039;
+    color: white;
+    padding: 5px 10px;
+}
+
+/* Container Configuration */
+.container-config {
+    padding: 1rem;
+    border: 1px solid #000;
+    border-radius: 10px;
+    height: auto;
+}
+
+/* Config Title */
+.config-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.config-title-ticket {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Button Styles */
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e30039;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0.5rem;
+}
+
+button img {
+    margin-right: 0.5rem;
+}
+
+/* Search Input */
+input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid black;
+    width: 100%; /* Full width for mobile screens */
+    font-size: 1rem;
+}
+
+/* Scrollable List */
+.overflow-y-scroll {
+    height: 17rem;
+    padding: 0.5rem;
+    border: 1px solid black;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+
+/* --- RESPONSIVE STYLES --- */
+
+/* For mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .container-config {
+        width: 100%;
+        height: auto; /* Adjust the height for mobile */
+        margin-bottom: 1rem;
+    }
+
+    .p-4 {
+        padding: 1rem; /* Adjust padding for mobile */
+    }
+
+    .mobile-height {
+        height: auto; /* Adjust height for mobile */
+    }
+
+    .full-width {
+        width: 100%; /* Full width input for mobile */
+    }
+
+    /* Button adjustments for mobile */
+    button {
+        width: 100%; /* Full width buttons for mobile */
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Adjust text and image sizes */
+    button img {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Search input full width on mobile */
+    input[type="text"] {
+        width: 100%;
+    }
+
+    .config-ticket-list-item {
+        padding: 10px;
+        text-align: center;
+    }
+
+    /* Hide or adjust elements for smaller screens if needed */
+    .container-height {
+        height: auto; /* Allow the container to expand based on content */
+    }
+
+    .h-25rem {
+        height: auto;
+    }
+}
+
+/* For larger screens (min-width: 768px) */
+@media (min-width: 768px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .container-config {
+        height: 25rem; /* Fixed height for larger screens */
+    }
+
+    .fixed-width-250 {
+        width: 250px; /* Fixed width for larger screens */
+    }
+
+    .fixed-width-300 {
+        width: 300px; /* Fixed width for larger screens */
+    }
+
+    /* Button adjustments for larger screens */
+    button {
+        width: auto;
+        padding: 0.5rem 1rem;
+    }
+
+    button img {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* List item styles for larger screens */
+    .config-ticket-list-item {
+        padding: 10px;
+        text-align: left;
+    }
+
+    .overflow-y-scroll {
+        width: 400px; /* Increase width for larger screens */
+    }
+}

@@ -1,0 +1,273 @@
+.container-page {
+    padding: 10px;
+  
+    @media (min-width: 768px) {
+      /* Styles for tablets and larger screens */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns layout on larger screens */
+        gap: 1rem;
+      }
+      .col-span-3 {
+        grid-column: span 3;
+      }
+      .container-creation {
+        padding: 1rem;
+      }
+    }
+  
+    @media (max-width: 767px) {
+      /* Styles for mobile screens */
+      .grid {
+        display: block; /* Stack items vertically on mobile */
+      }
+      .container-creation {
+        margin-bottom: 20px; /* Space between stacked elements */
+      }
+      .page-title,
+      .creation-title,
+      .creation-item-select,
+      .creation-item-textarea,
+      .creation-item-input-prma {
+        font-size: 14px; /* Adjust font size for smaller screens */
+      }
+      .flex-container-column {
+        margin-bottom: 10px;
+      }
+      .creation-item-select,
+      .creation-item-input-prma,
+      .creation-item-textarea {
+        width: 100%;
+      }
+    }
+  }
+  
+  .flex-container-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .flex-container-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    @media (max-width: 767px) {
+      display: block; /* Stack elements vertically on mobile */
+    }
+  }
+  
+  .creation-item-select,
+  .creation-item-input-prma {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .creation-item-textarea {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .page-title {
+    font-size: 16px;
+    font-weight: bold;
+  
+    @media (max-width: 480px) {
+      font-size: 14px; /* Adjust title font size for very small screens */
+    }
+  }
+  
+  .page-message-erreur {
+    color: red;
+    font-size: 12px;
+  }
+  
+  .button-save,
+  .button-cancel {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #f28a8a; /* Example color for save button */
+  
+    @media (max-width: 480px) {
+      font-size: 14px;
+      padding: 8px; /* Reduce padding for very small screens */
+    }
+  }
+  
+  .button-cancel {
+    background-color: #ccc; /* Cancel button color */
+  }
+  
+  .page-attachements-drop {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+  
+    @media (max-width: 767px) {
+      padding: 15px; /* Reduce padding on mobile */
+    }
+  }
+  
+  .page-attachements-info {
+    max-height: 150px;
+    overflow-y: auto;
+  }
+  
+  /* Specific media query for very small screens */
+  @media (max-width: 480px) {
+    .page-title,
+    .creation-title {
+      font-size: 12px; /* Smaller font for titles on very small screens */
+    }
+  
+    .creation-item-select,
+    .creation-item-textarea,
+    .creation-item-input-prma {
+      padding: 6px; /* Smaller padding on inputs */
+    }
+  
+    .button-save,
+    .button-cancel {
+      font-size: 14px;
+      padding: 8px; /* Reduce padding on buttons */
+    }
+  
+    .header-buttons-item-logo {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  .parent-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 20px; /* Add some space between the two sections */
+  
+    /* Adjust layout for larger screens if necessary */
+    @media (min-width: 768px) {
+      flex-direction: row; /* Align them side by side on larger screens */
+      gap: 10px; /* Adjust gap for larger screens */
+    }
+  }
+  
+  .spare-parts-section,
+  .purchase_request {
+    width: 100%; /* Ensure both sections take full width */
+  }
+  
+  .flex-container-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  
+    @media (max-width: 767px) {
+      display: block; /* Stack elements vertically on mobile */
+    }
+  }
+  
+  .container-creation {
+    padding: 1rem;
+    background-color: #f8f9fa; /* Light background color for better visibility */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for a card effect */
+  }
+  
+  .creation-item-input-prma,
+  .creation-item-select-prma {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .page-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .creation-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 767px) {
+    .container-creation {
+      padding: 0.5rem; /* Smaller padding for mobile */
+    }
+  
+    .creation-title,
+    .page-title {
+      font-size: 14px; /* Smaller font size for mobile */
+    }
+  
+    .creation-item-input-prma,
+    .creation-item-select-prma {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .creation-title,
+    .page-title {
+      font-size: 12px; /* Further reduce font size for very small screens */
+    }
+  
+    .creation-item-input-prma,
+    .creation-item-select-prma {
+      padding: 6px;
+      font-size: 12px; /* Reduce padding and font size for small screens */
+    }
+  }
+  
+  .flex-container-center {
+    display: flex;
+    justify-content: center; /* Centrer le contenu horizontalement */
+    align-items: center;     /* Centrer le contenu verticalement */
+    width: 100%;             /* Assurer que le conteneur prenne toute la largeur */
+    margin: 0 auto;          /* Centrer le conteneur par rapport à la page */
+    padding: 0;              /* Supprimer les espaces internes */
+}
+
+/* Assurez-vous que le contenu interne ne dépasse pas et s'ajuste */
+.flex-container-center > * {
+    max-width: 100%;         /* Assurer que le contenu interne respecte la largeur */
+    flex: 1;                 /* Permet au contenu interne de s'adapter à l'espace disponible */
+}
+
+/* Pour les petits écrans (smartphones) */
+@media (max-width: 767px) {
+    .flex-container-center {
+        flex-direction: column; /* Empile les éléments verticalement sur mobile */
+        align-items: flex-start; /* Aligne les éléments à gauche */
+        padding: 0.5rem;         /* Ajoute un léger padding pour éviter que le contenu touche les bords */
+    }
+
+    .flex-container-center > * {
+        width: 100%;             /* S'assurer que chaque enfant prenne toute la largeur sur mobile */
+    }
+}
+
+/* Pour les très petits écrans (moins de 480px) */
+@media (max-width: 480px) {
+    .flex-container-center {
+        padding: 0.25rem;        /* Réduire légèrement le padding pour les petits écrans */
+    }
+
+    .flex-container-center > * {
+        width: 100%;             /* Garder la pleine largeur pour le contenu interne */
+    }
+}

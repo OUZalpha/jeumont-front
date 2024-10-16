@@ -1,0 +1,13 @@
+/* Base styles */
+.ticket-col-between2 {
+    /* Normal display on desktop */
+    display: block;
+  }
+  
+  /* Hide on mobile screens */
+  @media (max-width: 767px) {
+    .ticket-col-between2 {
+      display: none; /* Hide this section on screens smaller than 767px (mobile) */
+    }
+  }
+  
