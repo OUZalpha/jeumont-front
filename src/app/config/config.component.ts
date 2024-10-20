@@ -1,6 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { SharedTitleService } from '../services/shared-title.service';
-import { ActivatedRoute, ChildActivationEnd, Router, NavigationEnd } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { filter, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
@@ -29,6 +29,10 @@ export class ConfigComponent implements OnInit, OnDestroy {
     { path: 'pieces', label: 'Spares ' }
   ];
 
+  // State variables for menu visibility
+  isMenuVisible: boolean = false; // Toggle for mobile view
+  isDesktop: boolean = false; // Check for desktop view
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -36,6 +40,7 @@ export class ConfigComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+    // Listen for route changes
     this.route.firstChild?.url.pipe(
       takeUntil(this.ngUnsubscribe)
     ).subscribe((segments) => {
@@ -50,14 +55,37 @@ export class ConfigComponent implements OnInit, OnDestroy {
     });
   
     this.sharedTitleService.changeTitle('config');
+
+    // Check screen size on initialization
+    this.checkScreenSize();
+    window.addEventListener('resize', this.checkScreenSize.bind(this));
   }
 
   ngOnDestroy() {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
+    window.removeEventListener('resize', this.checkScreenSize.bind(this));
   }
 
-  changeUrl() { this.updateCurrentRoute() }
+  // Method to toggle the menu visibility for mobile devices
+  toggleMenu() {
+    this.isMenuVisible = !this.isMenuVisible;
+  }
+
+  // Method to check screen size and toggle menu visibility accordingly
+  @HostListener('window:resize', [])
+  checkScreenSize() {
+    this.isDesktop = window.innerWidth >= 1024;
+    if (this.isDesktop) {
+      this.isMenuVisible = true;  // Always show the menu on desktop
+    } else {
+      this.isMenuVisible = false;  // Hide menu by default on mobile
+    }
+  }
+
+  changeUrl() { 
+    this.updateCurrentRoute(); 
+  }
 
   private updateCurrentRoute() {
     this.route.firstChild?.url.pipe(

@@ -1,7 +1,19 @@
 <div class="container-page">
     <div class="rounded-[1rem]">
+        <!-- Add the icon for mobile menu toggle -->
+        <div class="flex items-center justify-between lg:hidden p-2 bg-custom text-white">
+            <h2 class="text-lg font-bold">Menu</h2>
+            <!-- Toggle icon to show/hide menu -->
+            <img 
+                src="assets/icons/polygon.png" 
+                alt="Menu Toggle" 
+                class="w-6 h-6 cursor-pointer" 
+                (click)="toggleMenu()"
+            />
+        </div>
+
         <!-- Adjust the grid layout for mobile and desktop -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-9 border border-solid border-black text-center rounded-t-[10px]">
+        <div [ngClass]="{'hidden': !isMenuVisible, 'block': isMenuVisible || isDesktop}" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-9 border border-solid border-black text-center rounded-t-[10px]">
             <ng-container *ngFor="let route of configRoutes">
                 <a
                     (click)="changeUrl()"

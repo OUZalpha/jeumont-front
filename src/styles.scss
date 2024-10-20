@@ -259,7 +259,8 @@ tbody tr:nth-child(even) {
     @media (max-width: 768px) {
         flex-direction: column; /* Les éléments s'empilent verticalement sur petits écrans */
         justify-content: flex-start; /* Alignement des éléments en haut */
-        padding: 10px; /* Ajout de padding pour une meilleure présentation sur mobile */
+        align-items: center; /* Center items horizontally */
+        padding: 20px; /* Ajout de padding pour une meilleure présentation sur mobile */
     }
 
     /* Styles pour tablettes */
