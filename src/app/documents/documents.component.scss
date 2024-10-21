@@ -34,13 +34,67 @@ button.active {
   color: white;
   background-color: #E30039;
 }
+
 .pagination {
-    display: flex;
-    // justify-content: space-between;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .pagination-button,
 .pagination-input {
-    margin: 0 0.2rem; /* Adjust spacing as needed */
+  margin: 0 0.2rem;
+}
+
+/* --- RESPONSIVE STYLES --- */
+
+/* For mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+  }
+
+  .w-full {
+      width: 100%;
+  }
+
+  .page-title,
+  .page-title-element {
+      font-size: 1.25rem;
+      text-align: center;
+  }
+
+  .creation-item-input-prma {
+      width: 100%;
+      margin-top: 0.5rem;
+  }
+
+  .pagination {
+      flex-direction: column;
+      gap: 1rem;
+  }
+
+  .header-buttons-item {
+      width: 100%;
+  }
+}
+
+/* For larger screens (min-width: 768px) */
+@media (min-width: 768px) {
+  .w-full {
+      width: 100%;
+  }
+
+  .grid-cols-2 {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-cols-4 {
+      grid-template-columns: repeat(4, 1fr);
+  }
+
+  .custom-scrollbar {
+      max-width: 100%;
+  }
 }
