@@ -144,7 +144,7 @@ tbody tr:nth-child(even) {
 
 /* Nav -----*/
 .menu-hamburger {
-    width: 25rem;
+    width: 27rem;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -855,7 +855,8 @@ input, select, textarea {
     background-color: $primaryColor;
 }
 
-/* Base Ticket Styles */
+
+/* Ticket --------- */
 .ticket {
     display: flex;
     align-items: center;
@@ -864,16 +865,24 @@ input, select, textarea {
     margin-right: .25rem;
     border-radius: .5rem;
     border: 1px solid #000000;
-    background-color: #f9f9f9; /* Optional background color */
 }
 
-/* PC Styles */
+.ticket-dev {
+    display: flex;
+    flex-direction: column;
+    padding: .25rem .5rem;
+    margin-bottom: .25rem;
+    margin-right: .25rem;
+    border-radius: .5rem;
+    border: 1px solid #000000;
+}
+
 .ticket-left {
-    width: 55%; /* Left section takes 55% width on PC */
+    width: 55%;
 }
 
 .ticket-right {
-    width: 43%; /* Right section takes 43% width on PC */
+    width: 43%;
 }
 
 .ticket-title {
@@ -881,15 +890,50 @@ input, select, textarea {
     font-size: 1rem;
     font-weight: 800;
 }
-
-.ticket-col-between, .ticket-col-between1, .ticket-col-between2 {
+ 
+.ticket-col-between {
+    height: 6rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
+    width: 14rem;
+    // border: solid;
+    align-items: start;
+
+
 }
 
-.ticket-description, .ticket-descriptions {
+    @media only screen and (max-width: 768px) {
+        .ticket-description2 {
+          display: none;
+        }
+      }
+.ticket-col-between1 {
+    height: 50%; /* Example percentage for height */
+    // display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%; /* Example percentage for width */
+    overflow: auto;
+    min-width: none;
+    // border: solid;
+}
+.ticket-col-between2 {
+    // height: 50%; /* Example percentage for height */
+    // display: flex;
+    // flex-direction: column;
+    // // justify-content: space-between;
+    // width: 30%; /* Example percentage for width */
+    // overflow: auto;
+    // min-width: none;
+    // border: solid;
+    display: flex;
+
+
+}
+
+
+.ticket-description {
     display: flex;
     justify-content: space-between;
     background: #E4E4E4;
@@ -898,24 +942,167 @@ input, select, textarea {
     font-size: .8rem;
     font-weight: 400;
     font-family: 'Inter';
-    width: 100%; /* Full width */
-    height: auto;
-    margin-top: 1rem;
+    width: 13rem;
+    height: 6rem;
+    margin-left: 16.5rem;
+    margin-top: -5rem;
+
+}
+.ticket-descriptions{
+    display: flex;
+    justify-content: space-between;
+    background: #E4E4E4;
+    padding: .25rem;
+    border-radius: .5rem;
+    font-size: .8rem;
+    font-weight: 400;
+    font-family: 'Inter';
+    width: 13rem;
+    height: 6rem;
+    margin-left: 0rem;
+    // margin-top: -5rem;
 }
 
+.ticket-descriptions2{
+    display: flex;
+    justify-content: space-between;
+    background: #E4E4E4;
+    padding: .25rem;
+    border-radius: .5rem;
+    font-size: .8rem;
+    font-weight: 400;
+    font-family: 'Inter';
+    width: 13rem;
+    height: 6rem;
+    margin-left: -1rem;
+    // margin-top: -5rem;
+}
+.ticket-description2{
+    display: flex;
+    justify-content: space-between;
+    background: #E4E4E4;
+    padding: .25rem;
+    border-radius: .5rem;
+    font-size: .8rem;
+    font-weight: 400;
+    font-family: 'Inter';
+    width: 13rem;
+    height: 6rem;
+    // margin-left: -100%;
+    // margin-top: -5rem;
+    // border: solid;
+}
+.ticket-descriptionsprm{
+      display: flex;
+    justify-content: space-between;
+    background: #E4E4E4;
+    padding: .25rem;
+    border-radius: .5rem;
+    font-size: .8rem;
+    font-weight: 400;
+    font-family: 'Inter';
+    width: 13rem;
+    height: 6rem;
+    margin-left: -4rem;
+    // margin-top: -5rem;
+}
 .ticket-flex-center {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    //justify-content: space-between;
+    flex-wrap: wrap;  /* Permet de passer à la ligne sur les petits écrans si nécessaire */
+    width: 100%;      /* Assure que la largeur soit bien adaptée à l'écran */
+    overflow: hidden; /* Évite l'apparition des barres de défilement */
 }
 
-.ticket-flex-start {
-    display: flex;
+@media only screen and (max-width: 768px) {
+    .ticket {
+        padding: 10px; /* Réduit les marges/paddings pour économiser de l'espace */
+    }
+    .ticket-flex-center {
+        flex-direction: column;  /* Réorganise les éléments en colonne sur petits écrans */
+        align-items: flex-start; /* Aligner les éléments au début */
+        justify-content: flex-start; /* Ajuste l'espace pour les petits écrans */
+        width: 100%; /* Assure que l'élément prenne toute la largeur disponible */
+        padding:  0 ; /* Ajoute un peu de padding pour un meilleur espacement */
+    }
+    .ticket-flex-center > * {
+        width: 100%; /* Les enfants de .ticket-flex-center prennent aussi toute la largeur */
+        margin-bottom: 10px; /* Ajoute un peu d'espace entre les éléments pour aérer */
+    }
+    .ticket-title, .ticket-title-element, .ticket-title-element-gras {
+        font-size: 14px; /* Réduit légèrement la taille du texte */
+        margin: 0; /* Supprime les marges */
+    }
+
+    .ticket-col-between1, .ticket-col-between2 {
+        padding: 0; /* Enlever les paddings pour serrer l'espace */
+    }
+
+    .ticket-description2 {
+        margin: 0;
+        padding: 5px; /* Réduire le padding de la description */
+    }
+
+    .ml-1 {
+        margin-left: 0; /* Supprimer les marges latérales sur mobile */
+    }
+
+    .ticket-flex-start {
+        margin-bottom: 5px; /* Réduire l'espacement entre les éléments */
+    }
+
+    .header-buttons-item-logo {
+        width: 30px; /* Réduit la taille du logo */
+        height: 30px;
+    }
+
+    /* Réduit les espaces entre les items dans la section ticket-right */
+    .ticket-right {
+        padding: 10px;
+    }
+
+    .ticket-title-element-date {
+        font-size: 12px; /* Réduit la taille du texte des dates */
+        margin: 0;
+    }
+
+    /* Éliminer les marges et ajuster les espacements entre les tickets */
+    .ticket-title-element-date-gras {
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .flex {
+        margin-bottom: 5px; /* Réduire les marges entre les items flexibles */
+    }
+
+    .ticket-button {
+        margin: 5px 0; /* Réduire les marges autour des boutons */
+    }
+}
+
+
+.ticket-flex-start{
+   display: flex;
     align-items: center;
+    justify-content: space-between;
+    // border: solid;
+}
+
+
+
+.ticket-title-time {
+    font-family: 'Inter';
+    margin: 0 .25rem;
+    font-size: .8rem;
+    font-weight: 500;
+    color: #FF0000;
 }
 
 .ticket-title-element-gras {
     font-family: 'Inter';
+    margin: 0 .25rem;
     font-size: .8rem;
     font-weight: 700;
 }
@@ -926,7 +1113,19 @@ input, select, textarea {
     font-weight: 400;
 }
 
-.ticket-color {
+.ticket-title-element-date {
+    font-family: 'Inter';
+    font-size: .65rem;
+    font-weight: 400;
+}
+
+.ticket-title-element-date-gras {
+    font-family: 'Inter';
+    font-size: .65rem;
+    font-weight: 600;
+}
+
+.ticket-color{
     width: 3rem;
     height: 1rem;
     border-radius: .25rem;
@@ -947,84 +1146,6 @@ input, select, textarea {
     font-size: .8rem;
     font-weight: bold;
 }
-
-/* --- RESPONSIVE STYLES --- */
-
-/* Mobile (max-width: 767px) */
-@media (max-width: 767px) {
-    .ticket {
-        flex-direction: column; /* Stack elements vertically on mobile */
-        padding: 1rem; /* Add more padding on mobile */
-    }
-
-    .ticket-left, .ticket-right {
-        width: 100%; /* Full width for both left and right sections on mobile */
-    }
-
-    .ticket-title {
-        font-size: 1.2rem; /* Increase font size for better readability */
-    }
-
-    .ticket-col-between1 {
-        width: 100%; /* Full width on mobile */
-        padding: 1rem 0; /* Add spacing between elements */
-    }
-
-    .ticket-col-between2 {
-        display: none; /* Hide this section on mobile */
-    }
-
-    .ticket-description, .ticket-descriptions {
-        width: 100%; /* Full width on mobile */
-        margin: 0; /* Remove margin */
-        height: auto; /* Adjust to content height */
-    }
-
-    .ticket-title-element, .ticket-title-element-gras {
-        font-size: .9rem; /* Increase font size for better readability */
-    }
-
-    .ticket-button {
-        font-size: 1rem; /* Increase button text size on mobile */
-        padding: .75rem 1.5rem; /* Adjust padding for larger buttons */
-    }
-
-    .ticket-close-icon {
-        width: 2rem; /* Adjust icon size */
-        height: 2rem;
-    }
-
-    .ticket-flex-center {
-        flex-direction: column; /* Stack elements vertically on mobile */
-        align-items: flex-start; /* Align items to the left */
-    }
-}
-
-/* PC (min-width: 768px) */
-@media (min-width: 768px) {
-    .ticket {
-        flex-direction: row; /* Row layout for PC */
-        padding: .25rem .5rem;
-    }
-
-    .ticket-left {
-        width: 55%; /* PC left section */
-    }
-
-    .ticket-right {
-        width: 43%; /* PC right section */
-    }
-
-    .ticket-description, .ticket-descriptions {
-        width: 60%; /* Adjust width on larger screens */
-        margin-left: 1rem;
-    }
-
-    .ticket-title-element, .ticket-title-element-gras {
-        font-size: .85rem; /* Adjust font size on larger screens */
-    }
-}
-
 
 
 /* Update ----- */

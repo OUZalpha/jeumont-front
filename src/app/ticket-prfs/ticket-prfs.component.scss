@@ -177,3 +177,13 @@
 //         height: 1rem;
 //     }
 // }
+@media only screen and (max-width: 768px) {
+    .ticket-description2 {
+      display: none;
+    }
+    .ticket-title-element-date {
+        display: none;
+      }
+
+  }
+

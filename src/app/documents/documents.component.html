@@ -82,9 +82,16 @@
                 </thead>
                 <tbody class="documents-thead">
                     <tr *ngFor="let document of documentsinterne" class="documents-tbody-tr">
-                        <td class="w-full max-w-0 documents-tbody-element">{{ document.doc_ref }}
-                               
-                             
+                        <td class="w-full max-w-0 documents-tbody-element truncate ">{{ document.doc_ref }}
+                               <dl class="md:hidden">
+                                <dt class="documents-tbody-element truncate">{{ document.doc_description }}</dt>
+                                <dt class="documents-tbody-element">{{ document.doc_type }}</dt>
+                                <dt class="documents-tbody-element">{{ document.Categorie.cat_label }}</dt>
+                                <dt class="documents-tbody-element">{{ document.User.user_name }} {{ document.User.user_first_name }}</dt>
+                                <dt class="documents-tbody-element">{{ document.doc_created_date | date:'yyyy MMM dd HH:mm:ss' }}</dt>
+                                <dt class="documents-tbody-element">{{ document.doc_updated_date | date:'yyyy MMM dd HH:mm:ss' }}</dt>
+                                <dt class="documents-tbody-element">{{ document.doc_size }}o</dt>
+                               </dl>
                         </td>
                         <td class="hidden sm:table-cell documents-tbody-element">{{ document.doc_description }}</td>
                         <td class="hidden sm:table-cell documents-tbody-element">{{ document.doc_type }}</td>
