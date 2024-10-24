@@ -1024,7 +1024,6 @@ input, select, textarea {
         align-items: flex-start; /* Aligner les éléments au début */
         justify-content: flex-start; /* Ajuste l'espace pour les petits écrans */
         width: 100%; /* Assure que l'élément prenne toute la largeur disponible */
-        padding:  0 ; /* Ajoute un peu de padding pour un meilleur espacement */
     }
     .ticket-flex-center > * {
         width: 100%; /* Les enfants de .ticket-flex-center prennent aussi toute la largeur */

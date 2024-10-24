@@ -11,11 +11,11 @@
     </div>
   
     <div class="nav-sec-3">
-        <div *ngIf="isTechnnavRoute()" class="nav-planning font-semibold ">
-            <div class="nav-planning-item-gray ">
-                <div>
-                    <h2 class="nav-planning-item-title">Week {{lastWeek}}</h2> 
-                </div>  
+        <div *ngIf="isTechnnavRoute()" class="nav-planning font-semibold hide-on-mobile">
+    <div class="nav-planning-item-gray">
+        <div>
+            <h2 class="nav-planning-item-title">Week {{lastWeek}}</h2> 
+        </div> 
                 <div class="flex items-center">
                     <div *ngFor="let oncall of onCallsLastWeek">
                         <ng-container *ngIf="oncall.primary_backup">
@@ -236,12 +236,27 @@
         <h2 class="menu-title py-[.5rem]" routerLink="/document" (click)="toggleMenu()">Document search</h2>
         <h2 class="menu-title py-[.5rem]" routerLink="/customer" (click)="toggleMenu()">{{ 'searchClient' | translate }}</h2>
     </div>
+    
+    <!-- Ajout des boutons Langue et Feedback -->
+    <hr class="menu-hr lg:hidden">
+<div>
+    <button class="menu-hamburger-flex lg:hidden" (click)="toggleLangage()">
+        <h2 class="menu-title">{{ 'languageChange' | translate }}</h2>
+    </button>
+</div>
+<hr class="menu-hr lg:hidden">
+<div>
+    <button class="menu-hamburger-flex lg:hidden" (click)="toggleFeedback()">
+        <h2 class="menu-title">Feedback</h2>
+    </button>
+</div>
+
     <hr class="menu-hr">
     <div>
-        <h2 class="menu-title py-[.5rem]" *ngIf="isManagerEnabled()" routerLink="/config" (click)="toggleMenu()">Congif and on-call schedule</h2>
+        <h2 class="menu-title py-[.5rem]" *ngIf="isManagerEnabled()" routerLink="/config" (click)="toggleMenu()">Config and on-call schedule</h2>
         <h2 class="menu-title py-[.5rem]" routerLink="/calendrier" (click)="toggleMenu()">Calendrier</h2>
     </div>
-            
+
     <div class="menu-hamburger-logs custom-scrollbar">
         <div class="menu-hamburger-logs-nav">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
